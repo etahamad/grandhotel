@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8">
+        <title>Grand Hotel</title>      
+        <style>
+            
+        input[type=checkbox]{
+            display: none;
+        } 
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+        }
+        @media (max-width: 768px) {
+        .menu { 
+            display:none;
+            position: absolute;
+            background-color:teal;
+            right: 0;
+            left: 0;
+            text-align: center;
+            padding: 16px 0;
+        }
+        .menu li:hover {
+            display: inline-block;
+            background-color:#4c9e9e;
+            transition: 0.3s ease;
+        }
+        .menu li + li {
+            margin-top: 12px;
+        }
+        input[type=checkbox]:checked ~ .menu{
+            display: block;
+        }
+        .hamburger {
+            display: block;
+        }
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+        .dropdown li:hover {
+            background-color: #4c9e9e;
+        }
+    } 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: cursive;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: teal;
+            color: #fff;
+        }
+        .nav-links a {
+            color: #fff;
+        }
+        .logo {
+            font-size: 32px;
+        }
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        .menu li:hover {
+            background-color: #4c9e9e;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        .menu li {
+            padding: 5px 14px;
+        }
+        .services {
+            position: relative; 
+        }
+        .dropdown {
+            background-color: rgb(1, 139, 139);
+            padding: 1em 0;
+            position: absolute; 
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+        }
+        .dropdown li + li {
+            margin-top: 10px;
+        }
+        .dropdown li {
+            padding: 0.5em 1em;
+             width: 8em;
+             text-align: center;
+        }
+        .dropdown li:hover {
+             background-color: #4c9e9e;
+        }
+        .services:hover .dropdown {
+             display: block;
+        }
+            *{
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+               
+                background-size: cover;
+                opacity: 1.5;
+            }               
+            body{
+                font-family: montserrat;
+                background-image: url('images/main_background.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            
+            div.gallery{
+                margin-top: 10px;
+                margin-bottom: 30px;
+                margin-right: 70px;
+                margin-left: 650px;
+                opacity: 1.5;
+            }
+
+            div.desc{
+                margin-top: 10px;
+                margin-bottom: 30px;
+                margin-right: 70px;
+                margin-left: 0px;
+            }
+            nav{
+                position: fixed;
+                background: #cb4154;
+                height: 80px;
+                width: 100%;
+                top: 0px;
+            }
+            label.logo{
+                color: white    ;
+                font-size: 35px;
+                line-height: 80px;
+                padding: 0 100px;
+                font-weight: bold;
+            }
+            nav ul{
+                float: right;
+                margin-right: 20px;
+            }
+            nav ul li{
+                display: inline-block;
+                line-height: 80px;
+                margin: 01px;
+                border-right: 2px solid #bbb;
+            }
+            .chat-box {
+                position:fixed;
+                right:15px;
+                bottom:0;
+                box-shadow:0 0 0.1em rgb(255, 255, 255);
+            }
+
+            .chat-closed {
+                width: 400px;
+                height: 35px;
+                background: #4c9e9e;
+                line-height: 35px;
+                font-size: 18px;
+                text-align: center;
+                border:1px solid #777;
+                color: rgb(255, 255, 255);
+            }
+
+            .chat-header {
+                width: 450px;
+                height: 40px;
+                background: #4c9e9e;
+                line-height: 33px;
+                text-indent: 20px;
+                border:1px solid #777;
+                border-bottom:none;
+            }
+
+            .chat-content{
+                width: 450px;
+                height:40px;
+                min-height: 508px;
+                background:#ffffff;
+                border:1px solid #777;
+                overflow-y:auto;
+                word-wrap: break-word;
+            }
+
+            .box{
+                width:10px;
+                height:10px;
+                background:green;
+                float:left;
+                position:relative;
+                top: 11px;
+                left: 10px;
+                border:1px solid #ededed;
+            }
+
+            .hide {
+                display:none;
+            }
+        </style>   
+        <link rel="icon" type="image/x-icon" href="941-9414309_hotel-reservations-search-engine-optimization-icon.png">
+    <title>Document</title>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+            </label>
+                <label class="logo">Grand Hotel</label>
+            <ul>
+              <li><a class="active" href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+        </nav>  
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div class="logo">Grand Hotel</div>
+            <ul class="nav-links">
+              <input type="checkbox" id="checkbox_toggle" />
+              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+              <div class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li class="services">
+                  <a href="/">Services</a>  
+                  <ul class="dropdown">
+                    <li><a href="/">Book Room </a></li>
+                    <li><a href="/">Room Service</a></li>
+                    <li><a href="/">Cancel book</a></li>
+                    <li><a href="/">Call</a></li>
+                    <li><a href="/">Dropdown 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="/">Pricing</a></li>
+                <li><a href="/">Contact</a></li>
+              </div>
+            </ul>
+          </nav>
+               <div class="gallery">
+                   <img src="images/single_room.jpeg" alt="single room" style="width:300px;height:300px;">
+                   <div class="desc">Single Room</div>
+               </div>
+               <div class="gallery">
+                  <img src="images/double.jpeg" alt="double room" style="width:300px;height:300px;">
+                   <div class="desc">Double Room</div>
+               </div>
+               <div class="gallery">
+                   <img src="images/triple.jpg" alt="triple room" style="width:300px;height:300px;"> 
+                   <div class="desc">Triple Room</div>
+               </div>
+               <div class="gallery">
+                   <img src="images/quad.jpg" alt="quad room" style="width:300px;height:300px;">    
+                   <div class="desc">Quad Room</div>
+               </div>
+               <div class="chat-box">
+                    <div class="chat-closed"> Edith is always here. </div>
+                    <div class="chat-header hide"><div class="box"></div>Edith is online.</div>
+                        <div class="chat-content hide">
+                
+                            <iframe src='https://webchat.botframework.com/embed/edithai-bot?s=blzxhHIpFf4.Vy_Gz-mvxuVlN2LuL0A6y7LBavI6yJ8TwuuIQQYWahw'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+                
+                        </div>
+                </div>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    $(".chat-closed").on("click",function(e){
+                        $(".chat-header,.chat-content").removeClass("hide");
+                        $(this).addClass("hide");
+                    });
+                
+                    $(".chat-header").on("click",function(e){
+                        $(".chat-header,.chat-content").addClass("hide");
+                        $(".chat-closed").removeClass("hide");
+                    });
+                });
+                </script>
+    </body>  
+    <footer>
+    <footer> 
+</html>
